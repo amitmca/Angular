@@ -1,0 +1,24 @@
+<div *ngIf="showMe">
+ {{ getTitle() }}
+ <p [style.color]="color">This is Example Of Proprty Binding</p>   
+ <p><button (click)='buttonClicked()'>Event Handling</button></p>
+ <ol>
+     <li *ngFor='let color of colors'>
+         {{color}}
+     </li>
+ </ol>
+ <label>Please enter your Name :<input type="text" [(ngModel)]="name"></label>
+<p>Welcome  {{name}}</p>
+<p>
+ Input string : <input type='text' [(ngModel)] ="num"/>
+</p>
+    <div [ngSwitch]="num">
+        <div *ngSwitchCase="'1'"><p [style.color]="name">One</p></div>
+        <div *ngSwitchCase="'2'">Two</div>
+        <div *ngSwitchCase="'3'">Three</div>
+        <div *ngSwitchCase="'4'">Four</div>
+        <div *ngSwitchCase="'5'">Five</div>
+        <div *ngSwitchDefault>This is Default</div>
+    </div>
+
+</div>
