@@ -1,12 +1,23 @@
 
+
 import { Component, Input  } from '@angular/core';
 
 @Component({
     selector: 'child-component',
     template: `<h2>Child Component</h2>
-               Current count is {{ count }}
+               current count is {{ count }}
     `
 })
 export class ChildComponent {
-    @Input() count: number;
+    private _count = 0;
+
+    @Input()
+    set count(count: number) {
+        this._count = count;
+        console.log(count);
+    }
+    get count(): number { 
+        return this._count;
+     }
+
 }

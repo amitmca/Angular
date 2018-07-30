@@ -11,15 +11,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ChildComponent = (function () {
     function ChildComponent() {
+        this._count = 0;
     }
+    Object.defineProperty(ChildComponent.prototype, "count", {
+        get: function () {
+            return this._count;
+        },
+        set: function (count) {
+            this._count = count;
+            console.log(count);
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Number)
-    ], ChildComponent.prototype, "count", void 0);
+        __metadata('design:type', Number), 
+        __metadata('design:paramtypes', [Number])
+    ], ChildComponent.prototype, "count", null);
     ChildComponent = __decorate([
         core_1.Component({
             selector: 'child-component',
-            template: "<h2>Child Component</h2>\n               Current count is {{ count }}\n    "
+            template: "<h2>Child Component</h2>\n               current count is {{ count }}\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], ChildComponent);
